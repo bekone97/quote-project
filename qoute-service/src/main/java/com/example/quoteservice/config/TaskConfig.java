@@ -11,10 +11,10 @@ import org.springframework.context.annotation.Configuration;
 @ConditionalOnProperty(name = "pingtask.mode",havingValue = "active")
 public class TaskConfig {
 
-    @Value("${SEVER_PORT}")
+    @Value("${pingtask.url}")
     private String pingTaskUrl;
     @Bean
     public Task pingTask(){
-        return new PingTask(pingTaskUrl+"/task");
+        return new PingTask(pingTaskUrl);
     }
 }
