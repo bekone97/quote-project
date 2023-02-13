@@ -10,6 +10,3 @@ spring:
     database-platform: org.hibernate.dialect.H2Dialect
 jwt:
   secret: secret
-pingtask:
-  url: http://localhost:8080/task
-  period: 1200000
