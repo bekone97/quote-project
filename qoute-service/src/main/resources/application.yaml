@@ -8,7 +8,6 @@ spring:
     change-log: classpath:db/changelog/db.changelog-master.xml
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
-    show-sql: true
   h2:
     console:
       enabled: true
@@ -22,4 +21,7 @@ management:
       enabled: true
 
 jwt:
-  secret: secret
+  secret: ${SECRET_KEY:secret}
+pingtask:
+  url: ${PINGTASK_URL:http://localhost:8080/task}
+  period: ${PINGTASK_PERIOD:1200000}

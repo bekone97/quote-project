@@ -8,5 +8,8 @@ spring:
     change-log: classpath:db/changelog/db.changelog-test-master.xml
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
-  jwt:
-    secret: secret
+jwt:
+  secret: secret
+pingtask:
+  url: http://localhost:8080/task
+  period: 1200000
