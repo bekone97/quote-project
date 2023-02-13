@@ -23,8 +23,7 @@ management:
 jwt:
   secret: ${SECRET_KEY:secret}
 pingtask:
-  mode: ${PINGTASK_MODE:}
-  url: ${PINGTASK_URL:http://localhost:8080/task}
+  mode: ${PINGTASK_MODE:active}
   period: ${PINGTASK_PERIOD:1200000}
 
 server:

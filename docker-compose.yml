@@ -3,7 +3,7 @@ services:
   quote-service:
     build:
       context: .
-      dockerfile: Dockerfile-quote-service
+      dockerfile: Dockerfile
 
     ports:
       - "8080:8080"
