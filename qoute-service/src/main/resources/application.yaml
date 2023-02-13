@@ -26,3 +26,6 @@ pingtask:
   mode: ${PINGTASK_MODE:}
   url: ${PINGTASK_URL:http://localhost:8080/task}
   period: ${PINGTASK_PERIOD:1200000}
+
+server:
+  port: ${PORT:8080}
