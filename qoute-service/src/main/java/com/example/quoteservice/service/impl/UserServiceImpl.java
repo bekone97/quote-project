@@ -109,7 +109,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void existsByUsername(String username) {
-        if(!userRepository.existsById(username))
+        if(!userRepository.existsUserByUsername(username))
             return;
         throw new NotUniqueResourceException(User.class,"username",username);
 

@@ -142,7 +142,7 @@ class UserServiceUnitTest {
         user.setPassword(incomingPassword);
         UserDtoResponse expected = userDtoResponse;
         when(userRepository.save(user)).thenReturn(user);
-        when(userRepository.existsById(username)).thenReturn(false);
+        when(userRepository.existsUserByUsername(username)).thenReturn(false);
         when(userRepository.existsByEmail(userDtoRequest.getEmail())).thenReturn(false);
         when(passwordEncoder.encode(incomingPassword)).thenReturn(incomingPassword);
 
@@ -151,25 +151,25 @@ class UserServiceUnitTest {
         assertEquals(expected, actual);
         verify(userRepository).save(user);
         verify(passwordEncoder).encode(incomingPassword);
-        verify(userRepository).existsById(username);
+        verify(userRepository).existsUserByUsername(username);
         verify(userRepository).existsByEmail(userDtoRequest.getEmail());
     }
 
     @Test
     void saveFailUsername() {
-        when(userRepository.existsById(username)).thenReturn(true);
+        when(userRepository.existsUserByUsername(username)).thenReturn(true);
 
         NotUniqueResourceException actual = assertThrows(NotUniqueResourceException.class,
                 () -> userService.save(username,userDtoRequest, "somePassword"));
 
         assertTrue(actual.getMessage().contains("User already exists with username="+username));
         verify(userRepository, never()).save(user);
-        verify(userRepository).existsById(username);
+        verify(userRepository).existsUserByUsername(username);
         verify(userRepository,never()).existsByEmail(userDtoRequest.getEmail());
     }
     @Test
     void saveFailEmail() {
-        when(userRepository.existsById(username)).thenReturn(false);
+        when(userRepository.existsUserByUsername(username)).thenReturn(false);
         when(userRepository.existsByEmail(userDtoRequest.getEmail())).thenReturn(true);
 
         NotUniqueResourceException actual = assertThrows(NotUniqueResourceException.class,
@@ -177,7 +177,7 @@ class UserServiceUnitTest {
 
         assertTrue(actual.getMessage().contains("User already exists with email="+userDtoRequest.getEmail()));
         verify(userRepository, never()).save(user);
-        verify(userRepository).existsById(username);
+        verify(userRepository).existsUserByUsername(username);
         verify(userRepository).existsByEmail(userDtoRequest.getEmail());
     }
 

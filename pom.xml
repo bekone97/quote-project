@@ -5,6 +5,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>qoute-service</module>
+        <module>bdd-service</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
