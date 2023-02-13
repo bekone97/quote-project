@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+    <changeSet id="2023-02-10-changes-filling-table-quote" author="a.miachyn">
+        <insert tableName="QUOTE">
+            <column name="TITLE" value="yayaya"/>
+            <column name="CONTENT" value="sdsadasdasomePassword"/>
+            <column name="USERNAME" value="miachyn"/>
+            <column name="DATE_OF_POST" value="2022-06-25 01:01:01.0001"/>
+        </insert>
+        <insert tableName="QUOTE">
+            <column name="TITLE" value="yayaya"/>
+            <column name="CONTENT" value="sdsadasdasomePassword"/>
+            <column name="USERNAME" value="miachyn"/>
+            <column name="DATE_OF_POST" value="2022-06-25 01:01:01.0001"/>
+        </insert>
+        <insert tableName="QUOTE">
+            <column name="TITLE" value="yayaya"/>
+            <column name="CONTENT" value="sdsadasdasomePassword"/>
+            <column name="USERNAME" value="miachyn"/>
+            <column name="DATE_OF_POST" value="2022-06-25 01:01:01.0001"/>
+        </insert>
+        <insert tableName="VOTE_COUNTER">
+            <column name="QUOTE_ID" value="1"/>
+            <column name="COUNTER" value="0"/>
+        </insert>
+        <insert tableName="VOTE_COUNTER">
+            <column name="QUOTE_ID" value="2"/>
+            <column name="COUNTER" value="0"/>
+        </insert>
+        <insert tableName="VOTE_COUNTER">
+            <column name="QUOTE_ID" value="3"/>
+            <column name="COUNTER" value="0"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

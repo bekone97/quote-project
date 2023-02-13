@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+    <changeSet id="2023-02-10-changes-create-table-quote" author="a.miachyn">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="QUOTE"/>
+            </not>
+        </preConditions>
+        <createTable tableName="QUOTE">
+            <column name="QUOTE_ID" type="BIGSERIAL" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="CONTENT" type="varchar(10000)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="vote_counter" type="bigint" defaultValueNumeric="0">
+            </column>
+            <column name="TITLE" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="USERNAME" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DATE_OF_POST" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="QUOTE" baseColumnNames="USERNAME" constraintName="fk_quote_user" referencedTableName="USER"
+                                 referencedColumnNames="USERNAME"/>
+    </changeSet>
+</databaseChangeLog>

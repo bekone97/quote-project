@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  qoute-service:
+    build:
+      context: .
+      dockerfile: Dockerfile-quote-service
+
+    ports:
+      - "8080:8080"

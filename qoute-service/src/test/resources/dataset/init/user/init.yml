@@ -1,0 +1,6 @@
+user:
+  - username: miachyn
+    password: somePassword
+    email: Someemail@mail.ru
+    date_of_birth: "1997-06-25"
+    role: "ROLE_ADMIN"

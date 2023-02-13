@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+    <changeSet id="2023-02-10-changes-filling-table-user" author="a.miachyn">
+        <insert tableName="USER">
+            <column name="USERNAME" value="miachyn"/>
+            <column name="PASSWORD" value="$2a$12$wIoK/Y3JrNBCHRAwRKE.KOl1h12gbw7871zJ7X7phOHNGYPoh97Y2"/>
+            <column name="ROLE" value="ROLE_ADMIN"/>
+            <column name="EMAIL" value="somemeail@mail.ru"/>
+            <column name="DATE_OF_BIRTH" value="1997-06-25"/>
+        </insert>
+        <insert tableName="USER">
+            <column name="USERNAME" value="someName"/>
+            <column name="PASSWORD" value="$2a$12$wIoK/Y3JrNBCHRAwRKE.KOl1h12gbw7871zJ7X7phOHNGYPoh97Y2"/>
+            <column name="ROLE" value="ROLE_ADMIN"/>
+            <column name="EMAIL" value="someanothermeail@mail.ru"/>
+            <column name="DATE_OF_BIRTH" value="1993-06-25"/>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>

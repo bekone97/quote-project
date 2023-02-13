@@ -2,10 +2,7 @@ package com.example.quoteservice.model;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -17,10 +14,6 @@ import java.util.List;
 @Builder
 public class User {
     @Id
-    @Column(name = "user_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long userId;
-
     @Column(name = "username")
     private String username;
 
@@ -30,7 +23,15 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL,
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL,
             orphanRemoval = true, fetch = FetchType.LAZY)
+    @ToString.Exclude
     private List<Quote> quotes;
+
+    @Column(name = "email")
+    private String email;
+    @Enumerated(value = EnumType.STRING)
+    private Role role;
+
+
 }
