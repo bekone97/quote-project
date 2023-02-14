@@ -13,7 +13,7 @@
             <column name="VOTE_COUNTER_ID" type="BIGSERIAL" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="QUOTE_ID" type="varchar(100)">
+            <column name="QUOTE_ID" type="BIGSERIAL">
                 <constraints nullable="false"/>
             </column>
             <column name="COUNTER" type="bigint">
