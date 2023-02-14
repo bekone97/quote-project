@@ -13,4 +13,4 @@ Implemented only for user controller. It's available by the link : https://quote
 Tests implemented for user logic (service(integration,unit),controller)
 ## BDD
 Tests were complited via Cucumber for user endpoints.
-Thanks for attention and don't be judgemental please =) 
+## Thanks for attention and don't be judgemental, please =) 
