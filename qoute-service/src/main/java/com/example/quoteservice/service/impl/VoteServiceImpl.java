@@ -15,6 +15,7 @@ import com.example.quoteservice.service.VoteCounterService;
 import com.example.quoteservice.service.VoteService;
 import com.example.quoteservice.util.ConstantUtil;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -38,6 +39,7 @@ public class VoteServiceImpl implements VoteService {
 
     @Override
     @Transactional
+    @CacheEvict(value = "quote",key = "#quoteId")
     public VoteDtoResponse save(VoteDtoRequest voteDtoRequest, Long quoteId) {
         if (voteRepository.existsByQuoteQuoteIdAndUserUsername(quoteId, voteDtoRequest.getUsername())) {
             throw new NotUniqueResourceException(
@@ -51,6 +53,7 @@ public class VoteServiceImpl implements VoteService {
 
     @Override
     @Transactional
+    @CacheEvict(value = "quote",key = "#quoteId")
     public VoteDtoResponse update(Long voteId, VoteDtoRequest voteDtoRequest, Long quoteId, AuthenticatedUser authenticatedUser) {
         checkValidCredentials(authenticatedUser,voteDtoRequest.getUsername());
         return voteRepository.findByVoteIdAndQuoteQuoteId(voteId, quoteId)
@@ -66,6 +69,7 @@ public class VoteServiceImpl implements VoteService {
 
 
     @Override
+    @CacheEvict(value = "quote",key = "#quoteId")
     public void deleteById(Long voteId, Long quoteId, AuthenticatedUser authenticatedUser) {
 
         Vote vote = voteRepository.findByVoteIdAndQuoteQuoteId(voteId, quoteId)
