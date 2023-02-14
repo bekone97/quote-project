@@ -13,4 +13,6 @@ Implemented only for user controller. It's available by the link : https://quote
 Tests implemented for user logic (service(integration,unit),controller)
 ## BDD
 Tests were complited via Cucumber for user endpoints.
+## Database schema
+![database schema](https://github.com/bekone97/quote-project/blob/master/schema/database_schema.png?raw=true)
 ## Thanks for attention and don't be judgemental, please =) 
