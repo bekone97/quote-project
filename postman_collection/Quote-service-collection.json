@@ -356,7 +356,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "    {       \r\n        \"title\": \"Some changed title\",\r\n        \"content\": \"Some interesting another post\",\r\n        \"userId\": \"miachyn\"\r\n    }",
+							"raw": "    {       \r\n        \"title\": \"Some changed title\",\r\n        \"content\": \"Some interesting another post\",\r\n        \"username\": \"miachyn\"\r\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -505,7 +505,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n        \"voteType\":\"UP\",\r\n        \"username\": \"miachyn\"\r\n    }",
+							"raw": "{\r\n        \"voteType\":\"UP\",\r\n        \"username\": \"someName\"\r\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -513,16 +513,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/posts/1/comments/1",
-							"protocol": "http",
+							"raw": "{{url}}/quotes/1/votes/1",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "8080",
 							"path": [
-								"posts",
+								"quotes",
 								"1",
-								"comments",
+								"votes",
 								"1"
 							]
 						}
@@ -622,7 +620,7 @@
 		},
 		{
 			"key": "access_token",
-			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtaWFjaHluIiwicm9sZXMiOiJST0xFX0FETUlOIiwiaXNzIjoiYmxvZ3Byb2plY3QuZXhhbXBsZSIsImV4cCI6MTY3NjMzNDMyNX0.hVXn0HiZOhHhT9ZJd80_aPKwd8WeFlqA1DjiLHPcEBY"
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtaWFjaHluIiwicm9sZXMiOiJST0xFX0FETUlOIiwiaXNzIjoiYmxvZ3Byb2plY3QuZXhhbXBsZSIsImV4cCI6MTY3NjQxNDkxMX0.P_3YXZdSF7F8tL7zDPRrMCXa_07bCZ18nNq_BINfsp8"
 		},
 		{
 			"key": "refresh_token",
